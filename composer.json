@@ -1,5 +1,5 @@
 {
-    "name": "apimatic/pepipost",
+    "name": "hr-d/pepipost",
     "type": "library",
     "description": "Pepipost API is used to send the mail to the receipients specified in the docs",
     "keywords": ["pepipost","API","SDK"],
