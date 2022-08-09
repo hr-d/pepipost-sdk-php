@@ -17,7 +17,7 @@ class Configuration
      * The base Uri for API calls
      * @var string
      */
-    public static $BASEURI = 'https://emailapi.netcorecloud.net/v5/mail';
+    public static $BASEURI = 'https://emailapi.netcorecloud.net/v5';
 
     /**
      * Your Pepipost API Key. You will find the api key in the Pepipost application in Integrations.
