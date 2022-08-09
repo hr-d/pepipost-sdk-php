@@ -47,7 +47,7 @@ class Content implements JsonSerializable
     {
         $json = array();
         $json['type']  = $this->type;
-        $json['value'] = utf8_encode($this->value);
+        $json['value'] = $this->value;
 
         return $json;
     }
