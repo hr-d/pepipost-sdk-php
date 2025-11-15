@@ -50,7 +50,7 @@ class MailSendController extends BaseController
      * @throws APIException Thrown if API call fails
      */
     public function createGeneratethemailsendrequest(
-        $body
+        $body , $timeout = 30
     ) {
 
         //prepare query string for API call
@@ -75,8 +75,11 @@ class MailSendController extends BaseController
             $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
         }
 
+        \Log::info('request to the pepipost is starting');
         //and invoke the API call request to fetch the response
+        Request::timeout($timeout);
         $response = Request::post($_queryUrl, $_headers, $_bodyJson);
+        \Log::info('get response from pepipost is successfully');
 
         $_httpResponse = new HttpResponse($response->code, $response->headers, $response->raw_body);
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
